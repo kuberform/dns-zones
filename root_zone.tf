@@ -10,7 +10,7 @@ resource "aws_route53_zone" "root_zone" {
   force_destroy = true
 
   tags {
-    Name    = "kube-root-zone"
+    Name    = "kuberform-root-zone"
     Owner   = "infrastructure"
     Billing = "costcenter"
   }
@@ -33,7 +33,7 @@ resource "aws_route53_zone" "region_zone" {
   force_destroy     = true
 
   tags {
-    Name    = "kube-region-zone-${element(var.regions, count.index)}"
+    Name    = "kuberform-region-zone-${element(var.regions, count.index)}"
     Owner   = "infrastructure"
     Billing = "costcenter"
   }
